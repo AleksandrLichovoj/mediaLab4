@@ -72,6 +72,9 @@
     <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a> <span>getUserMedia + CSS filters</span>
     </h1>
 
+<p>
+<img src="zlatan1.png" alt="AI portrait of Zlatan" width="400" height="400">
+</p>
 
     <video playsinline autoplay></video>
 
@@ -84,9 +87,18 @@
         <option value="sepia">Sepia</option>
     </select>
 
-    <button id="snapshotButton">Take snapshot</button>
+    <button onclick="submitOption()">Apply filter</button>
+
+<script>
+function submitOption() {
+  var selectedOption = document.getElementById("filterSelect").value;
+  document.body.className = selectedOption;
+}
+</script>
+
 
     <p>Draw a frame from the getUserMedia video stream onto the canvas element, then apply CSS filters.</p>
+
 
     <p>The variables <code>canvas</code>, <code>video</code> and <code>stream</code> are in global scope, so you can
         inspect them from the console.</p>
